@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#custom
+test.c
+main.c
+.vscode/*
+rush00/*
