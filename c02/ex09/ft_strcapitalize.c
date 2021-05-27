@@ -5,8 +5,7 @@ char	*ft_strcapitalize(char *str)
 	int		i;
 
 	if (str[0] >= 'a' && str[0] <= 'z')
-			str[0] -= 32;
-
+		str[0] -= 32;
 	i = 1;
 	while (str[i] != '\0')
 	{
@@ -23,12 +22,3 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-
-int main(void)
-{
-	char s[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-
-	ft_strcapitalize(s);
-	printf("%s", s);
-}
-
