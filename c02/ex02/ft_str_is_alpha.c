@@ -3,7 +3,7 @@ int	ft_str_is_alpha(char *str)
 	int	i;
 
 	if (*str == '\0')
-		return (0);
+		return (1);
 	i = 0;
 	while (str[i] != '\0')
 	{
