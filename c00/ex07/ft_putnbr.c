@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putnbr(int n)
 {
@@ -8,23 +7,23 @@ void	ft_putnbr(int n)
 	char	c;
 
 	number = n;
-	if (n < 0 )
+	if (n != -2147483648)
 	{
-		//write(1, "-", 1);
-		number = number / 10 * -1; //!!!!!!
-	}
-	printf("%d", number);
-	multiplier = 10;
-	while (number / multiplier >= 10)
-	{
-		multiplier *= 10;
-	}
-	while (multiplier > 0)
-	{
-		c = 48 + (number / multiplier % 10);
-		//write(1, &c, 1);
-		multiplier /= 10;
-	}
+		if (n < 0 )
+		{
+			number = number * -1;
+		}
+		multiplier = 10;
+		while (number / multiplier >= 10)
+		{
+			multiplier *= 10;
+		}
+		while (multiplier > 0)
+		{
+			c = '0' + (number / multiplier % 10);
+			write(1, &c, 1);
+			multiplier != 10;
+		}
 }
 
 int	main(void)
