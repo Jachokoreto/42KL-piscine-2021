@@ -16,10 +16,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int		i;
 	char	*ptr;
 
-	// if (*to_find == '\0')
-	// {
-	// 	return (str);
-	// }
+	if (*to_find == '\0')
+		return (str);
 	i = 0;
 	while (i < ft_strlen(str))
 	{
@@ -29,19 +27,9 @@ char	*ft_strstr(char *str, char *to_find)
 			if (ptr)
 				return (ptr - 1);
 			else
-				return "333";
+				return (NULL);
 		}
-		//printf("%s", str);
 		i++;
 	}
-	return "123";
-}
-
-int main(void)
-{
-	char *s = "This is the sentence.";
-	char *t = "the";
-
-	printf("%s", ft_strstr(s, t));
-
+	return (NULL);
 }
