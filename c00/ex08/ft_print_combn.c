@@ -7,7 +7,6 @@ void	ft_write_digit(int n, char digit[]);
 void	ft_print_combn(int n)
 {
 	char	digit[10];
-	int		i;
 	int		pos;
 
 	if (n < 0 || n > 10)

@@ -1,0 +1,7 @@
+{
+    "powermode.enabled": true,
+    "powermode.explosionOffset": 0.15,
+    "powermode.shakeIntensity": 10,
+    "powermode.enableShake": false,
+    "powermode.comboTimeout": 5
+}

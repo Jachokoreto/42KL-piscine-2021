@@ -1,6 +1,7 @@
-#include "ft_print_numbers.c"
+void	ft_print_numbers(void);
 
-int main()
+int	main(void)
 {
-    ft_print_numbers();
+	ft_print_numbers();
+	return (0);
 }
