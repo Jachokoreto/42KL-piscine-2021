@@ -1,30 +1,26 @@
 #include <unistd.h>
 
-void	ft_putnbr(int n)
+void	ft_putchar(char c)
 {
-	int		number;
-	int		multiplier;
-	char	c;
+	write(1, &c, 1);
+}
 
-	number = n;
-	if (n != -2147483648)
+void	ft_putnbr(int nbr)
+{
+	unsigned int	nbr_unsigned;
+
+	if (nbr < 0)
 	{
-		if (n < 0 )
-		{
-			number = number * -1;
-		}
-		multiplier = 10;
-		while (number / multiplier >= 10)
-		{
-			multiplier *= 10;
-		}
-		while (multiplier > 0)
-		{
-			c = '0' + (number / multiplier % 10);
-			write(1, &c, 1);
-			multiplier != 10;
-		}
+		nbr_unsigned = (unsigned int)(-1 * nbr);
+		ft_putchar('-');
 	}
 	else
-		write(1, "-2146483648", 11);
+		nbr_unsigned = (unsigned int)nbr;
+	if (nbr_unsigned >= 10)
+	{
+		ft_putnbr(nbr_unsigned / 10);
+		ft_putnbr(nbr_unsigned % 10);
+	}
+	else
+		ft_putchar(nbr_unsigned + '0');
 }

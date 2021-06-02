@@ -57,3 +57,5 @@ main.c
 .vscode/*
 rush00/*
 p_*.c
+jt_*.c
+
