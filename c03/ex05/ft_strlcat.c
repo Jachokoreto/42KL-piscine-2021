@@ -17,6 +17,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 
 	d_len = ft_strlen(dest);
 	s_len = ft_strlen(src);
+	if (size < d_len)
+		return (size + s_len);
 	offset = d_len;
 	src_index = 0;
 	while (*(src + src_index) != '\0' )
