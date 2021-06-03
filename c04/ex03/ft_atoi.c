@@ -1,5 +1,3 @@
-#include <ctype.h>
-
 int	ft_atoi(char *str)
 {
 	int	sign;
@@ -7,7 +5,8 @@ int	ft_atoi(char *str)
 
 	sign = 1;
 	number = 0;
-	while (isspace(*str) != 0)
+	while (*str == '\0' || *str == '\n' || *str == '\t'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	while (*str == '-' || *str == '+')
 	{
