@@ -1,0 +1,29 @@
+int	is_prime(unsigned int nb, unsigned int i)
+{
+	if (nb % i == 0)
+		return (0);
+	if (i * i > nb)
+		return (1);
+	else
+		return (is_prime(nb, i + 1));
+}
+
+int	ft_is_prime(int nb)
+{
+	if (nb <= 2)
+	{
+		if (nb == 2)
+			return (1);
+		else
+			return (0);
+	}
+	return (is_prime(nb, 2));
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (ft_is_prime(nb) == 1)
+		return (nb);
+	else
+		return (ft_find_next_prime(nb + 1));
+}
