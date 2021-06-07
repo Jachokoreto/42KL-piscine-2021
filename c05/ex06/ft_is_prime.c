@@ -2,7 +2,7 @@ int	is_prime(unsigned int nb, unsigned int i)
 {
 	if (nb % i == 0)
 		return (0);
-	if (i * i > nb && i)
+	if (i * i > nb)
 		return (1);
 	else
 		return (is_prime(nb, i + 1));

@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 19:43:16 by jatan             #+#    #+#             */
-/*   Updated: 2021/06/06 22:57:39 by jatan            ###   ########.fr       */
+/*   Updated: 2021/06/07 08:53:06 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,31 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char	*baby;
-	int		papa;
-	int		mama;
+	char	*dest;
+	int		total_len;
+	int		i;
 
-	mama = 0;
-	papa = 0;
-	while (mama < size)
+	if (size == 0)
+		return (dest = malloc(1));
+	i = 0;
+	total_len = 0;
+	while (i < size)
 	{
-		papa += ft_strlen(strs[mama]);
-		mama++;
+		total_len += ft_strlen(strs[i]);
+		i++;
 	}
-	papa += ft_strlen(sep) * size - 1;
-	baby = malloc(sizeof(*baby) * papa + 1);
-	if (baby == NULL)
+	total_len += ft_strlen(sep) * size - 1;
+	dest = malloc(sizeof(*dest) * total_len + 1);
+	if (dest == NULL)
 		return (NULL);
-	mama = 0;
-	while (mama < size)
+	i = 0;
+	while (i < size)
 	{
-		ft_strlcat(baby, strs[mama], papa + 1);
-		ft_strlcat(baby, sep, papa + 1);
-		mama++;
+		ft_strlcat(dest, strs[i], total_len + 1);
+		ft_strlcat(dest, sep, total_len + 1);
+		i++;
 	}
-	return (baby);
+	return (dest);
 }
 
 int	ft_strlen(char *str)

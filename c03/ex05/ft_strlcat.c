@@ -21,7 +21,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		return (size + s_len);
 	offset = d_len;
 	src_index = 0;
-	while (src[src_index] != '\0' && offset < size - 1)
+	while (src[src_index] != '\0' && offset < size - 1) 
 	{
 		dest[offset] = src[src_index];
 		offset++;
