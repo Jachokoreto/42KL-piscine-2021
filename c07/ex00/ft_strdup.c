@@ -7,15 +7,12 @@ char	*ft_strdup(char *src)
 	char	*dup;
 	int		i;
 
-	dup = (char*)malloc(sizeof(*dup) * (ft_strlen(src) + 1);
+	dup = (char *)malloc(sizeof (*dup) * (ft_strlen(src) + 1));
 	if (dup == NULL)
 		return (NULL);
 	i = 0;
 	while (src[i])
-	{
-		dup[i] = src[i];
-		i++;
-	}
+		dup[i] = src[i++];
 	dup[i] = '\0';
 	return (dup);
 }
