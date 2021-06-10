@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 02:55:13 by jatan             #+#    #+#             */
-/*   Updated: 2021/06/08 21:29:42 by jatan            ###   ########.fr       */
+/*   Updated: 2021/06/10 12:32:18 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	t_stock_str	*str;
 	int			i;
 
-	if (ac < 1)
-		return (NULL);
 	str = (t_stock_str *) malloc(sizeof(*str) * (ac + 1));
 	if (str == NULL)
 		return (NULL);
