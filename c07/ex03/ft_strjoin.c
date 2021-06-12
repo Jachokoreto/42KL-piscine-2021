@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 19:43:16 by jatan             #+#    #+#             */
-/*   Updated: 2021/06/07 08:53:06 by jatan            ###   ########.fr       */
+/*   Updated: 2021/06/08 23:48:19 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 
 	if (size == 0)
-		return (dest = malloc(1));
+	{
+		dest = malloc(1));
+		dest = 0;
+	}
 	i = 0;
 	total_len = 0;
 	while (i < size)
-	{
-		total_len += ft_strlen(strs[i]);
-		i++;
-	}
-	total_len += ft_strlen(sep) * size - 1;
-	dest = malloc(sizeof(*dest) * total_len + 1);
+		total_len += ft_strlen(strs[i++]);
+	total_len += ft_strlen(sep) * (size - 1) + 1;
+	dest = (char *)malloc(sizeof(*dest) * total_len);
 	if (dest == NULL)
 		return (NULL);
-	i = 0;
+	ft_strlcat(dest, strs[0], total_len);
+	i = 1;
 	while (i < size)
 	{
-		ft_strlcat(dest, strs[i], total_len + 1);
-		ft_strlcat(dest, sep, total_len + 1);
-		i++;
+		ft_strlcat(dest, sep, total_len);
+		ft_strlcat(dest, strs[i++], total_len);
 	}
 	return (dest);
 }
